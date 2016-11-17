@@ -3,8 +3,13 @@ A simple script to inject the needed files for glassdoor's dynamic analysers int
 Just place the system.img file in this directory and call `patch_system.rb` with superuser permissions to patch.
 
 ####Included Modifications
-- busybox
+- busybox 1.25.1
+- mitmproxy root certificate
+- mitmproxy proxy settings
 
 ####System Requirements
 - ext4
 - ruby
+
+####Image Requirements
+- x86_64
