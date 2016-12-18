@@ -1,0 +1,2 @@
+#! /system/bin/sh
+run-parts /system/etc/adb.init.d

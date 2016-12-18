@@ -11,12 +11,20 @@ Just place the system.img file in this directory and call `sudo ./patch_system.r
 ####System Requirements
 - ext4
 - ruby
+- fsck
+- resizefs
 
 ####Image Requirements
 - x86_64
 
-##Instructions
+###Instructions
 TODO
 
-##Tested & Working Images
+####Setting up the emulator
+You need to complete the setup using the option to "not use any network".
+Don't mind the Google App crashing all the time during this process.
+After completing you can finally disable (Settings -> Apps -> Google App -> Disable) the Google App and the crashes should be gone.  
+I'm currently working on a way to automatically disable the app, however it is mysteriously not working with the startup scripts right now.
+
+###Tested & Working Images
 - Android 7.1.1 (API 25) - Google APIs Intel x86 Atom_64

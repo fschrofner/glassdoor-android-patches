@@ -31,10 +31,10 @@ on property:init.svc.bootanim=stopped && property:vold.decrypt=trigger_restart_f
     exec - root root -- /system/bin/bootstat -l
 
 #initialises init.d
-on post-fs-data
+on boot
     start sysinit
 
-service sysinit /system/bin/sysinit
+service sysinit /system/bin/busybox ash /system/bin/sysinit
     user root
     group root
     seclabel u:r:init:s0
