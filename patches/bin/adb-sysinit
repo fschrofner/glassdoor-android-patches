@@ -1,2 +1,10 @@
 #! /system/bin/sh
+
+A=$(getprop sys.boot_completed | tr -d '\r')
+
+while [ "$A" != "1" ]; do
+    sleep 2
+    A=$(getprop sys.boot_completed | tr -d '\r')
+done
+
 run-parts /system/etc/adb.init.d

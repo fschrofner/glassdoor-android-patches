@@ -7,9 +7,4 @@ adb wait-for-device
 
 echo "device booted"
 
-#todo: replace sleep with check for readiness
-sleep 30
-
-adb shell "su -c adb-sysinit" > /dev/null
-
-echo "ready"
+adb shell "su -c adb-sysinit &" > /dev/null
