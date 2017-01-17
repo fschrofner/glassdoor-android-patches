@@ -1,0 +1,32 @@
+#! /system/bin/ash
+
+#remove old logs first
+rm -f /sdcard/test.log
+rm -f /sdcard/gtrace.log
+
+#wait until process is running
+pidof $1
+while [ $? != 0 ]
+do
+    pidof $1
+done
+
+PID="$(pidof $1)"
+
+#instantly stop the process
+kill -SIGSTOP "${PID}"
+
+#attach strace
+strace -p "${PID}" -o /sdcard/test.log > /sdcard/gtrace.log &
+
+#wait for strace to be attached
+tail -f /sdcard/gtrace.log | while read LINE
+do
+    echo "${LINE}" | grep attached
+    [ $? == 0 ] && pkill -P $$ tail
+done
+
+#continue the process
+kill -SIGCONT "${PID}"
+
+echo "gtrace ready"

@@ -7,6 +7,7 @@ Just place the system.img file in this directory and call `sudo ./patch_system.r
 - init.d like startup script execution (idea based on [ryuinferno](https://github.com/Ryuinferno/Term-init))
 - startup script execution based on adb (more reliable)
 - superuser (using binary and apk of [superuser](https://github.com/phhusson/Superuser))
+- gtrace - a script that lets strace attach to Android applications
 - mitmproxy root certificate
 
 ####System Requirements
