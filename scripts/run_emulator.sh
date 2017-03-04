@@ -1,7 +1,6 @@
 #! /bin/bash
 
-emulator -avd glassdoor -debug all -use-system-libs -no-boot-anim -selinux permissive -system ./system.img > /dev/null 2> /dev/null &
-# -http-proxy is buggy, so iptables on the emulator are used instead
+emulator -avd glassdoor -debug all -use-system-libs -no-boot-anim -selinux permissive -http-proxy 127.0.0.1:8989 -system $1 > /dev/null 2> /dev/null &
 
 adb wait-for-device
 

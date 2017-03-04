@@ -1,0 +1,3 @@
+#! /system/bin/ash
+
+find / \( -type f -a -newer /mnt/sdcard/timestamp \) -o -type d -a \( -name dev -o -name proc -o -name sys \) -prune | grep -v -e "^/dev$" -e "^/proc$" -e "^/sys$" > /sdcard/filesystem.log

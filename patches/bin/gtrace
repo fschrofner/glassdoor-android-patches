@@ -17,7 +17,7 @@ PID="$(pidof $1)"
 kill -SIGSTOP "${PID}"
 
 #attach strace
-strace -p "${PID}" -o /sdcard/test.log > /sdcard/gtrace.log &
+strace -p "${PID}" -o /sdcard/gtrace.log &
 
 #wait for strace to be attached
 tail -f /sdcard/gtrace.log | while read LINE
