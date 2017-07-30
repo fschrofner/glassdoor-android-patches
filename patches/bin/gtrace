@@ -1,7 +1,6 @@
 #! /system/bin/ash
 
 #remove old logs first
-rm -f /sdcard/test.log
 rm -f /sdcard/gtrace.log
 
 #wait until process is running
